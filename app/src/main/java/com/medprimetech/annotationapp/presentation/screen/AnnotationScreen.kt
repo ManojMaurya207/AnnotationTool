@@ -1,129 +1,129 @@
 package com.medprimetech.annotationapp.presentation.screen
 
-import android.graphics.Paint
-import androidx.compose.foundation.Canvas
-import androidx.compose.foundation.background
-import androidx.compose.foundation.gestures.detectDragGestures
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.Redo
+import androidx.compose.material.icons.filled.Save
+import androidx.compose.material.icons.filled.Undo
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import com.medprimetech.annotationapp.domain.model.AnnotationItem
+import com.medprimetech.annotationapp.presentation.component.DrawingCanvas
+import com.medprimetech.annotationapp.presentation.component.ToolBar
 import com.medprimetech.annotationapp.presentation.viewmodel.AnnotationViewModel
 import org.koin.androidx.compose.koinViewModel
 import java.io.File
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AnnotationScreen(
     projectId: Long,
-    projectImagePath: String,
-    onBack: () -> Unit,
-    viewModel: AnnotationViewModel = koinViewModel() // inject with params later
+    viewModel: AnnotationViewModel = koinViewModel()
 ) {
+    val project by viewModel.getProject(projectId).collectAsState(initial = null)
     val annotations by viewModel.annotations.collectAsState()
+
+    val selectedTool = viewModel.selectedTool.collectAsState()
+    val canUndo by viewModel.canUndo.collectAsState()
+    val canRedo by viewModel.canRedo.collectAsState()
+
+    LaunchedEffect(Unit) {
+        viewModel.loadAnnotations(projectId)
+    }
 
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Annotate") },
-                navigationIcon = {
-                    IconButton(onClick = onBack) {
-                        Icon(Icons.Default.ArrowBack, contentDescription = "Back")
-                    }
-                },
+                title = { Text("Annotate: ${project?.projectName ?: ""}") },
                 actions = {
-                    IconButton(onClick = { viewModel.save() }) {
+                    IconButton(onClick = { viewModel.saveAnnotations(projectId) }) {
                         Icon(Icons.Default.Save, contentDescription = "Save")
                     }
                 }
             )
         },
         bottomBar = {
-            ToolBar(
-                currentTool = viewModel.currentTool,
-                onToolSelected = { viewModel.setTool(it) },
-                onUndo = { viewModel.undo() },
-                onRedo = { viewModel.redo() }
-            )
+            Column {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 4.dp),
+                    horizontalArrangement = Arrangement.SpaceEvenly,
+                ) {
+                    UndoRedoButton(
+                        enabled = canUndo,
+                        icon = Icons.Default.Undo,
+                        label = "Undo",
+                        onClick = { viewModel.undo() }
+                    )
+                    UndoRedoButton(
+                        enabled = canRedo,
+                        icon = Icons.Default.Redo,
+                        label = "Redo",
+                        onClick = { viewModel.redo() }
+                    )
+                }
+                ToolBar(
+                    selectedTool = selectedTool.value,
+                    onToolSelected = { viewModel.selectTool(it) },
+                )
+            }
         }
-    ) { padding ->
-        Column(
+    ) { paddingValues ->
+        Box(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(padding)
+                .padding(paddingValues),
+            contentAlignment = Alignment.Center
         ) {
-            // Base project image
-            AsyncImage(
-                model = File(projectImagePath),
-                contentDescription = "Project Image",
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .weight(1f)
-                    .background(Color.Black)
-            )
+            project?.let { proj ->
+                Box(
+                    modifier = Modifier.wrapContentSize(),
+                    contentAlignment = Alignment.Center
+                ) {
+                    // Base image
+                    AsyncImage(
+                        model = File(proj.imageUri),
+                        contentDescription = "Project Image",
+                        contentScale = ContentScale.Fit,
+                        modifier = Modifier
+                            .align(Alignment.Center)
+                            .size(500.dp)
+                    )
 
-            // Canvas overlay
-            Canvas(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .weight(1f)
-                    .pointerInput(viewModel.currentTool) {
-                        detectDragGestures { change, _ ->
-                            val position = change.position
-                            if (viewModel.currentTool == ToolType.Freehand) {
-                                viewModel.addAnnotation(
-                                    AnnotationItem.Freehand(
-                                        points = listOf(Offset(position.x, position.y)),
-                                        color = Color.Red.value.toInt(),
-                                        strokeWidth = 4f
-                                    )
-                                )
-                            }
-                        }
-                    }
-            ) {
-                // Draw all annotations
-                annotations.forEach { ann ->
-                    when (ann) {
-                        is AnnotationItem.Freehand -> {
-                            for (i in 1 until ann.points.size) {
-                                drawLine(
-                                    color = Color(ann.color),
-                                    start = ann.points[i - 1],
-                                    end = ann.points[i],
-                                    strokeWidth = ann.strokeWidth
-                                )
-                            }
-                        }
-                        is AnnotationItem.Arrow -> {
-                            drawLine(
-                                color = Color(ann.color),
-                                start = ann.start,
-                                end = ann.end,
-                                strokeWidth = ann.strokeWidth
-                            )
-                        }
-                        is AnnotationItem.Text -> {
-                            drawContext.canvas.nativeCanvas.drawText(
-                                ann.text,
-                                ann.position.x,
-                                ann.position.y,
-                                Paint().apply {
-                                    color = ann.color
-                                    textSize = 42f
-                                }
-                            )
-                        }
-                        else -> {}
-                    }
+                    // Annotation overlay (same size as image)
+                    DrawingCanvas(
+                        annotations = annotations,
+                        selectedTool = selectedTool.value,
+                        onDraw = { item -> viewModel.addAnnotation(item) },
+                        modifier = Modifier.size(500.dp)
+                    )
                 }
             }
         }
+    }
+}
+
+@Composable
+private fun UndoRedoButton(
+    enabled: Boolean,
+    icon: androidx.compose.ui.graphics.vector.ImageVector,
+    label: String,
+    onClick: () -> Unit
+) {
+    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+        IconButton(
+            onClick = onClick,
+            enabled = enabled
+        ) {
+            Icon(icon, contentDescription = label)
+        }
+        Text(text = label, fontSize = 12.sp)
     }
 }

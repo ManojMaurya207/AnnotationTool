@@ -26,10 +26,6 @@ class ProjectRepositoryImpl(
         }
     }
 
-    suspend fun getProjectById(id: Long): ProjectEntity? {
-        return projectDao.getProjectById(id)
-    }
-
     override suspend fun deleteProject(project: Project) {
         projectDao.delete(
             ProjectEntity(

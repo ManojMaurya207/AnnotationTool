@@ -7,12 +7,8 @@ import com.medprimetech.annotationapp.data.local.dao.ProjectDao
 import com.medprimetech.annotationapp.data.local.entity.ProjectEntity
 import com.medprimetech.annotationapp.data.local.entity.AnnotationEntity
 
-@Database(
-    entities = [ProjectEntity::class, AnnotationEntity::class],
-    version = 1,
-    exportSchema = false
-)
-@TypeConverters(Converters::class)
+@Database(entities = [ProjectEntity::class, AnnotationEntity::class], version = 1)
+@TypeConverters(AnnotationConverters::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun projectDao(): ProjectDao
     abstract fun annotationDao(): AnnotationDao

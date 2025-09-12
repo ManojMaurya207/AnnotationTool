@@ -3,8 +3,10 @@ package com.medprimetech.annotationapp.presentation.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.navArgument
 import com.medprimetech.annotationapp.presentation.screen.AnnotationScreen
 import com.medprimetech.annotationapp.presentation.screen.HomeScreen
 
@@ -20,10 +22,14 @@ fun AppNavHost(navController: NavHostController) {
                 navController.navigate("annotation/$projectId")
             })
         }
-        composable(Routes.ANNOTATION) { backStackEntry ->
-            val projectId = backStackEntry.arguments?.getString("projectId")?.toLong() ?: 0L
+        composable(
+            route = Routes.ANNOTATION,
+            arguments = listOf(navArgument("projectId") { type = NavType.LongType })
+        ) { backStackEntry ->
+            val projectId = backStackEntry.arguments?.getLong("projectId") ?: 0L
             AnnotationScreen(projectId = projectId)
         }
+
     }
 }
 

@@ -7,5 +7,6 @@ import androidx.room.PrimaryKey
 data class ProjectEntity(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
     val projectName: String,
-    val imageUri: String
+    val imageUri: String,
+//    val annotations: List<AnnotationItem> = emptyList() // <-- JSON in DB
 )
