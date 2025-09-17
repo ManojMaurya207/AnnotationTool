@@ -1,0 +1,323 @@
+kotlin version: 2.2.10
+error message: java.lang.RuntimeException: Exception while generating code for:
+FUN name:drawStoredAnnotation visibility:private modality:FINAL returnType:kotlin.Unit
+  VALUE_PARAMETER kind:ExtensionReceiver name:<this> index:0 type:androidx.compose.ui.graphics.drawscope.DrawScope
+  VALUE_PARAMETER kind:Regular name:ann index:1 type:com.medprimetech.annotationapp.domain.model.AnnotationItem
+  BLOCK_BODY
+    BLOCK type=kotlin.Unit origin=WHEN
+      VAR IR_TEMPORARY_VARIABLE name:tmp0_subject type:com.medprimetech.annotationapp.domain.model.AnnotationItem [val]
+        GET_VAR 'ann: com.medprimetech.annotationapp.domain.model.AnnotationItem declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt.drawStoredAnnotation' type=com.medprimetech.annotationapp.domain.model.AnnotationItem origin=null
+      WHEN type=kotlin.Unit origin=WHEN
+        BRANCH
+          if: TYPE_OP type=kotlin.Boolean origin=INSTANCEOF typeOperand=com.medprimetech.annotationapp.domain.model.AnnotationItem.Freehand
+            GET_VAR 'val tmp0_subject: com.medprimetech.annotationapp.domain.model.AnnotationItem [val] declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt.drawStoredAnnotation' type=com.medprimetech.annotationapp.domain.model.AnnotationItem origin=null
+          then: BLOCK type=kotlin.Unit origin=null
+            VAR name:path type:androidx.compose.ui.graphics.Path [val]
+              CALL 'public final fun buildSmoothedPath$default (points: kotlin.collections.List<com.medprimetech.annotationapp.domain.model.PointFSerializable>, smoothness: kotlin.Int, $mask0: kotlin.Int, $handler: kotlin.Any?): androidx.compose.ui.graphics.Path declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt' type=androidx.compose.ui.graphics.Path origin=DEFAULT_DISPATCH_CALL
+                ARG points: CALL 'public final fun <get-points> (): kotlin.collections.List<com.medprimetech.annotationapp.domain.model.PointFSerializable> declared in com.medprimetech.annotationapp.domain.model.AnnotationItem.Freehand' type=kotlin.collections.List<com.medprimetech.annotationapp.domain.model.PointFSerializable> origin=GET_PROPERTY
+                  ARG <this>: TYPE_OP type=com.medprimetech.annotationapp.domain.model.AnnotationItem.Freehand origin=IMPLICIT_CAST typeOperand=com.medprimetech.annotationapp.domain.model.AnnotationItem.Freehand
+                    GET_VAR 'ann: com.medprimetech.annotationapp.domain.model.AnnotationItem declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt.drawStoredAnnotation' type=com.medprimetech.annotationapp.domain.model.AnnotationItem origin=null
+                ARG smoothness: COMPOSITE type=kotlin.Int origin=DEFAULT_VALUE
+                  CONST Int type=kotlin.Int value=0
+                ARG $mask0: CONST Int type=kotlin.Int value=2
+                ARG $handler: CONST Null type=kotlin.Any? value=null
+            CALL 'public final fun drawPath-LG529CI$default ($this: androidx.compose.ui.graphics.drawscope.DrawScope, path: androidx.compose.ui.graphics.Path, color: androidx.compose.ui.graphics.Color, alpha: kotlin.Float, style: androidx.compose.ui.graphics.drawscope.DrawStyle?, colorFilter: androidx.compose.ui.graphics.ColorFilter?, blendMode: androidx.compose.ui.graphics.BlendMode, $mask0: kotlin.Int, $handler: kotlin.Any?): kotlin.Unit declared in androidx.compose.ui.graphics.drawscope.DrawScope' type=kotlin.Unit origin=DEFAULT_DISPATCH_CALL
+              ARG $this: GET_VAR '<this>: androidx.compose.ui.graphics.drawscope.DrawScope declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt.drawStoredAnnotation' type=androidx.compose.ui.graphics.drawscope.DrawScope origin=IMPLICIT_ARGUMENT
+              ARG path: GET_VAR 'val path: androidx.compose.ui.graphics.Path [val] declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt.drawStoredAnnotation' type=androidx.compose.ui.graphics.Path origin=null
+              ARG color: CALL 'public open fun constructor-impl (value: kotlin.ULong): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color' type=androidx.compose.ui.graphics.Color origin=null
+                ARG value: CALL 'public final fun toULong (<this>: kotlin.Long): kotlin.ULong [inline] declared in kotlin.ULongKt' type=kotlin.ULong origin=null
+                  ARG <this>: CALL 'public final fun <get-color> (): kotlin.Long declared in com.medprimetech.annotationapp.domain.model.AnnotationItem.Freehand' type=kotlin.Long origin=GET_PROPERTY
+                    ARG <this>: TYPE_OP type=com.medprimetech.annotationapp.domain.model.AnnotationItem.Freehand origin=IMPLICIT_CAST typeOperand=com.medprimetech.annotationapp.domain.model.AnnotationItem.Freehand
+                      GET_VAR 'ann: com.medprimetech.annotationapp.domain.model.AnnotationItem declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt.drawStoredAnnotation' type=com.medprimetech.annotationapp.domain.model.AnnotationItem origin=null
+              ARG alpha: COMPOSITE type=kotlin.Float origin=DEFAULT_VALUE
+                CONST Float type=kotlin.Float value=0.0
+              ARG style: CONSTRUCTOR_CALL 'public constructor <init> (width: kotlin.Float, miter: kotlin.Float, cap: androidx.compose.ui.graphics.StrokeCap, join: androidx.compose.ui.graphics.StrokeJoin, pathEffect: androidx.compose.ui.graphics.PathEffect?, $mask0: kotlin.Int, $marker: kotlin.jvm.internal.DefaultConstructorMarker?) declared in androidx.compose.ui.graphics.drawscope.Stroke' type=androidx.compose.ui.graphics.drawscope.Stroke origin=DEFAULT_DISPATCH_CALL
+                ARG width: CALL 'public final fun <get-strokeWidth> (): kotlin.Float declared in com.medprimetech.annotationapp.domain.model.AnnotationItem.Freehand' type=kotlin.Float origin=GET_PROPERTY
+                  ARG <this>: TYPE_OP type=com.medprimetech.annotationapp.domain.model.AnnotationItem.Freehand origin=IMPLICIT_CAST typeOperand=com.medprimetech.annotationapp.domain.model.AnnotationItem.Freehand
+                    GET_VAR 'ann: com.medprimetech.annotationapp.domain.model.AnnotationItem declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt.drawStoredAnnotation' type=com.medprimetech.annotationapp.domain.model.AnnotationItem origin=null
+                ARG miter: COMPOSITE type=kotlin.Float origin=DEFAULT_VALUE
+                  CONST Float type=kotlin.Float value=0.0
+                ARG cap: CALL 'public final fun getRound-KaPHkGw (): androidx.compose.ui.graphics.StrokeCap declared in androidx.compose.ui.graphics.StrokeCap.Companion' type=androidx.compose.ui.graphics.StrokeCap origin=GET_PROPERTY
+                  ARG <this>: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.StrokeCap.Companion visibility:public [final,static] declared in androidx.compose.ui.graphics.StrokeCap' type=androidx.compose.ui.graphics.StrokeCap.Companion origin=null
+                ARG join: COMPOSITE type=androidx.compose.ui.graphics.StrokeJoin origin=DEFAULT_VALUE
+                  CALL 'public final fun <unsafe-coerce> <T, R> (v: T of kotlin.jvm.internal.<unsafe-coerce>): R of kotlin.jvm.internal.<unsafe-coerce> declared in kotlin.jvm.internal' type=androidx.compose.ui.graphics.StrokeJoin origin=null
+                    TYPE_ARG T: kotlin.Int
+                    TYPE_ARG R: androidx.compose.ui.graphics.StrokeJoin
+                    ARG v: CONST Int type=kotlin.Int value=0
+                ARG pathEffect: COMPOSITE type=androidx.compose.ui.graphics.PathEffect? origin=DEFAULT_VALUE
+                  CONST Null type=androidx.compose.ui.graphics.PathEffect? value=null
+                ARG $mask0: CONST Int type=kotlin.Int value=26
+                ARG $marker: CONST Null type=kotlin.jvm.internal.DefaultConstructorMarker? value=null
+              ARG colorFilter: COMPOSITE type=androidx.compose.ui.graphics.ColorFilter? origin=DEFAULT_VALUE
+                CONST Null type=androidx.compose.ui.graphics.ColorFilter? value=null
+              ARG blendMode: COMPOSITE type=androidx.compose.ui.graphics.BlendMode origin=DEFAULT_VALUE
+                CALL 'public final fun <unsafe-coerce> <T, R> (v: T of kotlin.jvm.internal.<unsafe-coerce>): R of kotlin.jvm.internal.<unsafe-coerce> declared in kotlin.jvm.internal' type=androidx.compose.ui.graphics.BlendMode origin=null
+                  TYPE_ARG T: kotlin.Int
+                  TYPE_ARG R: androidx.compose.ui.graphics.BlendMode
+                  ARG v: CONST Int type=kotlin.Int value=0
+              ARG $mask0: CONST Int type=kotlin.Int value=52
+              ARG $handler: CONST Null type=kotlin.Any? value=null
+        BRANCH
+          if: TYPE_OP type=kotlin.Boolean origin=INSTANCEOF typeOperand=com.medprimetech.annotationapp.domain.model.AnnotationItem.Arrow
+            GET_VAR 'val tmp0_subject: com.medprimetech.annotationapp.domain.model.AnnotationItem [val] declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt.drawStoredAnnotation' type=com.medprimetech.annotationapp.domain.model.AnnotationItem origin=null
+          then: BLOCK type=kotlin.Unit origin=null
+            CALL 'private final fun drawArrow (<this>: androidx.compose.ui.graphics.drawscope.DrawScope, ann: com.medprimetech.annotationapp.domain.model.AnnotationItem.Arrow): kotlin.Unit declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt' type=kotlin.Unit origin=null
+              ARG <this>: GET_VAR '<this>: androidx.compose.ui.graphics.drawscope.DrawScope declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt.drawStoredAnnotation' type=androidx.compose.ui.graphics.drawscope.DrawScope origin=IMPLICIT_ARGUMENT
+              ARG ann: TYPE_OP type=com.medprimetech.annotationapp.domain.model.AnnotationItem.Arrow origin=IMPLICIT_CAST typeOperand=com.medprimetech.annotationapp.domain.model.AnnotationItem.Arrow
+                GET_VAR 'ann: com.medprimetech.annotationapp.domain.model.AnnotationItem declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt.drawStoredAnnotation' type=com.medprimetech.annotationapp.domain.model.AnnotationItem origin=null
+        BRANCH
+          if: TYPE_OP type=kotlin.Boolean origin=INSTANCEOF typeOperand=com.medprimetech.annotationapp.domain.model.AnnotationItem.Text
+            GET_VAR 'val tmp0_subject: com.medprimetech.annotationapp.domain.model.AnnotationItem [val] declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt.drawStoredAnnotation' type=com.medprimetech.annotationapp.domain.model.AnnotationItem origin=null
+          then: BLOCK type=kotlin.Unit origin=null
+            CALL 'public final fun drawIntoCanvas (<this>: androidx.compose.ui.graphics.drawscope.DrawScope, block: kotlin.Function1<androidx.compose.ui.graphics.Canvas, kotlin.Unit>): kotlin.Unit [inline] declared in androidx.compose.ui.graphics.drawscope.DrawScopeKt' type=kotlin.Unit origin=null
+              ARG <this>: GET_VAR '<this>: androidx.compose.ui.graphics.drawscope.DrawScope declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt.drawStoredAnnotation' type=androidx.compose.ui.graphics.drawscope.DrawScope origin=IMPLICIT_ARGUMENT
+              ARG block: BLOCK type=kotlin.Function1<androidx.compose.ui.graphics.Canvas, kotlin.Unit> origin=LAMBDA
+                COMPOSITE type=kotlin.Unit origin=null
+                FUNCTION_REFERENCE 'private final fun drawStoredAnnotation$lambda$27 ($ann: com.medprimetech.annotationapp.domain.model.AnnotationItem, canvas: androidx.compose.ui.graphics.Canvas): kotlin.Unit declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt' type=kotlin.Function1<androidx.compose.ui.graphics.Canvas, kotlin.Unit> origin=INLINE_LAMBDA reflectionTarget=null
+                  ARG $ann: GET_VAR 'ann: com.medprimetech.annotationapp.domain.model.AnnotationItem declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt.drawStoredAnnotation' type=com.medprimetech.annotationapp.domain.model.AnnotationItem origin=null
+        BRANCH
+          if: TYPE_OP type=kotlin.Boolean origin=INSTANCEOF typeOperand=com.medprimetech.annotationapp.domain.model.AnnotationItem.Shape
+            GET_VAR 'val tmp0_subject: com.medprimetech.annotationapp.domain.model.AnnotationItem [val] declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt.drawStoredAnnotation' type=com.medprimetech.annotationapp.domain.model.AnnotationItem origin=null
+          then: BLOCK type=kotlin.Unit origin=null
+            CALL 'private final fun drawShape (<this>: androidx.compose.ui.graphics.drawscope.DrawScope, ann: com.medprimetech.annotationapp.domain.model.AnnotationItem.Shape): kotlin.Unit declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt' type=kotlin.Unit origin=null
+              ARG <this>: GET_VAR '<this>: androidx.compose.ui.graphics.drawscope.DrawScope declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt.drawStoredAnnotation' type=androidx.compose.ui.graphics.drawscope.DrawScope origin=IMPLICIT_ARGUMENT
+              ARG ann: TYPE_OP type=com.medprimetech.annotationapp.domain.model.AnnotationItem.Shape origin=IMPLICIT_CAST typeOperand=com.medprimetech.annotationapp.domain.model.AnnotationItem.Shape
+                GET_VAR 'ann: com.medprimetech.annotationapp.domain.model.AnnotationItem declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt.drawStoredAnnotation' type=com.medprimetech.annotationapp.domain.model.AnnotationItem origin=null
+        BRANCH
+          if: TYPE_OP type=kotlin.Boolean origin=INSTANCEOF typeOperand=com.medprimetech.annotationapp.domain.model.AnnotationItem.Eraser
+            GET_VAR 'val tmp0_subject: com.medprimetech.annotationapp.domain.model.AnnotationItem [val] declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt.drawStoredAnnotation' type=com.medprimetech.annotationapp.domain.model.AnnotationItem origin=null
+          then: BLOCK type=kotlin.Unit origin=null
+            WHEN type=kotlin.Unit origin=IF
+              BRANCH
+                if: CALL 'public final fun greater (arg0: kotlin.Int, arg1: kotlin.Int): kotlin.Boolean declared in kotlin.internal.ir' type=kotlin.Boolean origin=GT
+                  ARG arg0: CALL 'public abstract fun <get-size> (): kotlin.Int declared in kotlin.collections.List' type=kotlin.Int origin=GET_PROPERTY
+                    ARG <this>: CALL 'public final fun <get-path> (): kotlin.collections.List<com.medprimetech.annotationapp.domain.model.PointFSerializable> declared in com.medprimetech.annotationapp.domain.model.AnnotationItem.Eraser' type=kotlin.collections.List<com.medprimetech.annotationapp.domain.model.PointFSerializable> origin=GET_PROPERTY
+                      ARG <this>: TYPE_OP type=com.medprimetech.annotationapp.domain.model.AnnotationItem.Eraser origin=IMPLICIT_CAST typeOperand=com.medprimetech.annotationapp.domain.model.AnnotationItem.Eraser
+                        GET_VAR 'ann: com.medprimetech.annotationapp.domain.model.AnnotationItem declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt.drawStoredAnnotation' type=com.medprimetech.annotationapp.domain.model.AnnotationItem origin=null
+                  ARG arg1: CONST Int type=kotlin.Int value=1
+                then: BLOCK type=kotlin.Unit origin=null
+                  VAR name:p type:androidx.compose.ui.graphics.Path [val]
+                    CALL 'public final fun buildSmoothedPath$default (points: kotlin.collections.List<com.medprimetech.annotationapp.domain.model.PointFSerializable>, smoothness: kotlin.Int, $mask0: kotlin.Int, $handler: kotlin.Any?): androidx.compose.ui.graphics.Path declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt' type=androidx.compose.ui.graphics.Path origin=DEFAULT_DISPATCH_CALL
+                      ARG points: CALL 'public final fun <get-path> (): kotlin.collections.List<com.medprimetech.annotationapp.domain.model.PointFSerializable> declared in com.medprimetech.annotationapp.domain.model.AnnotationItem.Eraser' type=kotlin.collections.List<com.medprimetech.annotationapp.domain.model.PointFSerializable> origin=GET_PROPERTY
+                        ARG <this>: TYPE_OP type=com.medprimetech.annotationapp.domain.model.AnnotationItem.Eraser origin=IMPLICIT_CAST typeOperand=com.medprimetech.annotationapp.domain.model.AnnotationItem.Eraser
+                          GET_VAR 'ann: com.medprimetech.annotationapp.domain.model.AnnotationItem declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt.drawStoredAnnotation' type=com.medprimetech.annotationapp.domain.model.AnnotationItem origin=null
+                      ARG smoothness: COMPOSITE type=kotlin.Int origin=DEFAULT_VALUE
+                        CONST Int type=kotlin.Int value=0
+                      ARG $mask0: CONST Int type=kotlin.Int value=2
+                      ARG $handler: CONST Null type=kotlin.Any? value=null
+                  CALL 'public final fun drawPath-LG529CI$default ($this: androidx.compose.ui.graphics.drawscope.DrawScope, path: androidx.compose.ui.graphics.Path, color: androidx.compose.ui.graphics.Color, alpha: kotlin.Float, style: androidx.compose.ui.graphics.drawscope.DrawStyle?, colorFilter: androidx.compose.ui.graphics.ColorFilter?, blendMode: androidx.compose.ui.graphics.BlendMode, $mask0: kotlin.Int, $handler: kotlin.Any?): kotlin.Unit declared in androidx.compose.ui.graphics.drawscope.DrawScope' type=kotlin.Unit origin=DEFAULT_DISPATCH_CALL
+                    ARG $this: GET_VAR '<this>: androidx.compose.ui.graphics.drawscope.DrawScope declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt.drawStoredAnnotation' type=androidx.compose.ui.graphics.drawscope.DrawScope origin=IMPLICIT_ARGUMENT
+                    ARG path: GET_VAR 'val p: androidx.compose.ui.graphics.Path [val] declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt.drawStoredAnnotation' type=androidx.compose.ui.graphics.Path origin=null
+                    ARG color: CALL 'public final fun getTransparent-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+                      ARG <this>: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static] declared in androidx.compose.ui.graphics.Color' type=androidx.compose.ui.graphics.Color.Companion origin=null
+                    ARG alpha: COMPOSITE type=kotlin.Float origin=DEFAULT_VALUE
+                      CONST Float type=kotlin.Float value=0.0
+                    ARG style: CONSTRUCTOR_CALL 'public constructor <init> (width: kotlin.Float, miter: kotlin.Float, cap: androidx.compose.ui.graphics.StrokeCap, join: androidx.compose.ui.graphics.StrokeJoin, pathEffect: androidx.compose.ui.graphics.PathEffect?, $mask0: kotlin.Int, $marker: kotlin.jvm.internal.DefaultConstructorMarker?) declared in androidx.compose.ui.graphics.drawscope.Stroke' type=androidx.compose.ui.graphics.drawscope.Stroke origin=DEFAULT_DISPATCH_CALL
+                      ARG width: CALL 'public final fun <get-strokeWidth> (): kotlin.Float declared in com.medprimetech.annotationapp.domain.model.AnnotationItem.Eraser' type=kotlin.Float origin=GET_PROPERTY
+                        ARG <this>: TYPE_OP type=com.medprimetech.annotationapp.domain.model.AnnotationItem.Eraser origin=IMPLICIT_CAST typeOperand=com.medprimetech.annotationapp.domain.model.AnnotationItem.Eraser
+                          GET_VAR 'ann: com.medprimetech.annotationapp.domain.model.AnnotationItem declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt.drawStoredAnnotation' type=com.medprimetech.annotationapp.domain.model.AnnotationItem origin=null
+                      ARG miter: COMPOSITE type=kotlin.Float origin=DEFAULT_VALUE
+                        CONST Float type=kotlin.Float value=0.0
+                      ARG cap: CALL 'public final fun getRound-KaPHkGw (): androidx.compose.ui.graphics.StrokeCap declared in androidx.compose.ui.graphics.StrokeCap.Companion' type=androidx.compose.ui.graphics.StrokeCap origin=GET_PROPERTY
+                        ARG <this>: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.StrokeCap.Companion visibility:public [final,static] declared in androidx.compose.ui.graphics.StrokeCap' type=androidx.compose.ui.graphics.StrokeCap.Companion origin=null
+                      ARG join: COMPOSITE type=androidx.compose.ui.graphics.StrokeJoin origin=DEFAULT_VALUE
+                        CALL 'public final fun <unsafe-coerce> <T, R> (v: T of kotlin.jvm.internal.<unsafe-coerce>): R of kotlin.jvm.internal.<unsafe-coerce> declared in kotlin.jvm.internal' type=androidx.compose.ui.graphics.StrokeJoin origin=null
+                          TYPE_ARG T: kotlin.Int
+                          TYPE_ARG R: androidx.compose.ui.graphics.StrokeJoin
+                          ARG v: CONST Int type=kotlin.Int value=0
+                      ARG pathEffect: COMPOSITE type=androidx.compose.ui.graphics.PathEffect? origin=DEFAULT_VALUE
+                        CONST Null type=androidx.compose.ui.graphics.PathEffect? value=null
+                      ARG $mask0: CONST Int type=kotlin.Int value=26
+                      ARG $marker: CONST Null type=kotlin.jvm.internal.DefaultConstructorMarker? value=null
+                    ARG colorFilter: COMPOSITE type=androidx.compose.ui.graphics.ColorFilter? origin=DEFAULT_VALUE
+                      CONST Null type=androidx.compose.ui.graphics.ColorFilter? value=null
+                    ARG blendMode: CALL 'public final fun getClear-0nO6VwU (): androidx.compose.ui.graphics.BlendMode declared in androidx.compose.ui.graphics.BlendMode.Companion' type=androidx.compose.ui.graphics.BlendMode origin=GET_PROPERTY
+                      ARG <this>: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.BlendMode.Companion visibility:public [final,static] declared in androidx.compose.ui.graphics.BlendMode' type=androidx.compose.ui.graphics.BlendMode.Companion origin=null
+                    ARG $mask0: CONST Int type=kotlin.Int value=20
+                    ARG $handler: CONST Null type=kotlin.Any? value=null
+        BRANCH
+          if: CONST Boolean type=kotlin.Boolean value=true
+          then: BLOCK type=kotlin.Nothing origin=null
+            CALL 'public final fun noWhenBranchMatchedException (): kotlin.Nothing declared in kotlin.internal.ir' type=kotlin.Nothing origin=null
+            CALL 'public final fun throwKotlinNothingValueException (): kotlin.Nothing declared in kotlin.jvm.internal.Intrinsics' type=kotlin.Nothing origin=null
+
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:50)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate$default(FunctionCodegen.kt:43)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ClassCodegen.generateMethodNode(ClassCodegen.kt:422)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ClassCodegen.generateMethod(ClassCodegen.kt:439)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ClassCodegen.generate(ClassCodegen.kt:164)
+	at org.jetbrains.kotlin.backend.jvm.JvmIrCodegenFactory.generateFile(JvmIrCodegenFactory.kt:419)
+	at org.jetbrains.kotlin.backend.jvm.JvmIrCodegenFactory.invokeCodegen(JvmIrCodegenFactory.kt:388)
+	at org.jetbrains.kotlin.cli.jvm.compiler.KotlinToJVMBytecodeCompiler.runCodegen$cli(KotlinToJVMBytecodeCompiler.kt:431)
+	at org.jetbrains.kotlin.cli.pipeline.jvm.JvmBackendPipelinePhase.executePhase(JvmBackendPipelinePhase.kt:95)
+	at org.jetbrains.kotlin.cli.pipeline.jvm.JvmBackendPipelinePhase.executePhase(JvmBackendPipelinePhase.kt:36)
+	at org.jetbrains.kotlin.cli.pipeline.jvm.JvmBackendPipelinePhase.executePhase(JvmBackendPipelinePhase.kt:29)
+	at org.jetbrains.kotlin.cli.pipeline.PipelinePhase.phaseBody(PipelinePhase.kt:68)
+	at org.jetbrains.kotlin.cli.pipeline.PipelinePhase.phaseBody(PipelinePhase.kt:58)
+	at org.jetbrains.kotlin.config.phaser.NamedCompilerPhase.invoke(CompilerPhase.kt:102)
+	at org.jetbrains.kotlin.backend.common.phaser.CompositePhase.invoke(PhaseBuilders.kt:22)
+	at org.jetbrains.kotlin.config.phaser.CompilerPhaseKt.invokeToplevel(CompilerPhase.kt:53)
+	at org.jetbrains.kotlin.cli.pipeline.AbstractCliPipeline.runPhasedPipeline(AbstractCliPipeline.kt:109)
+	at org.jetbrains.kotlin.cli.pipeline.AbstractCliPipeline.execute(AbstractCliPipeline.kt:68)
+	at org.jetbrains.kotlin.cli.jvm.K2JVMCompiler.doExecutePhased(K2JVMCompiler.kt:78)
+	at org.jetbrains.kotlin.cli.jvm.K2JVMCompiler.doExecutePhased(K2JVMCompiler.kt:44)
+	at org.jetbrains.kotlin.cli.common.CLICompiler.execImpl(CLICompiler.kt:90)
+	at org.jetbrains.kotlin.cli.common.CLICompiler.exec(CLICompiler.kt:352)
+	at org.jetbrains.kotlin.incremental.IncrementalJvmCompilerRunnerBase.runCompiler(IncrementalJvmCompilerRunnerBase.kt:175)
+	at org.jetbrains.kotlin.incremental.IncrementalJvmCompilerRunnerBase.runCompiler(IncrementalJvmCompilerRunnerBase.kt:38)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.doCompile(IncrementalCompilerRunner.kt:504)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compileImpl(IncrementalCompilerRunner.kt:421)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.tryCompileIncrementally$lambda$10$compile(IncrementalCompilerRunner.kt:254)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.tryCompileIncrementally(IncrementalCompilerRunner.kt:272)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compile(IncrementalCompilerRunner.kt:124)
+	at org.jetbrains.kotlin.daemon.CompileServiceImplBase.execIncrementalCompiler(CompileServiceImpl.kt:679)
+	at org.jetbrains.kotlin.daemon.CompileServiceImplBase.access$execIncrementalCompiler(CompileServiceImpl.kt:93)
+	at org.jetbrains.kotlin.daemon.CompileServiceImpl.compile(CompileServiceImpl.kt:1806)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.RuntimeException: Exception while generating code for:
+FUN INLINE_LAMBDA name:drawStoredAnnotation$lambda$27 visibility:private modality:FINAL returnType:kotlin.Unit
+  VALUE_PARAMETER BOUND_VALUE_PARAMETER kind:Regular name:$ann index:0 type:com.medprimetech.annotationapp.domain.model.AnnotationItem
+  VALUE_PARAMETER kind:Regular name:canvas index:1 type:androidx.compose.ui.graphics.Canvas
+  BLOCK_BODY
+    VAR name:$i$a$-drawIntoCanvas-DrawingCanvasKt$drawStoredAnnotation$1 type:kotlin.Int [val]
+      CONST Int type=kotlin.Int value=0
+    VAR name:paint type:androidx.compose.ui.graphics.Paint [val]
+      CALL 'public final fun apply <T> (<this>: T of kotlin.StandardKt.apply, block: @[ExtensionFunctionType] kotlin.Function1<T of kotlin.StandardKt.apply, kotlin.Unit>): T of kotlin.StandardKt.apply [inline] declared in kotlin.StandardKt' type=androidx.compose.ui.graphics.Paint origin=null
+        TYPE_ARG T: androidx.compose.ui.graphics.Paint
+        ARG <this>: CALL 'public final fun Paint (): androidx.compose.ui.graphics.Paint declared in androidx.compose.ui.graphics.AndroidPaint_androidKt' type=androidx.compose.ui.graphics.Paint origin=null
+        ARG block: BLOCK type=@[ExtensionFunctionType] kotlin.Function1<androidx.compose.ui.graphics.Paint, kotlin.Unit> origin=LAMBDA
+          COMPOSITE type=kotlin.Unit origin=null
+          FUNCTION_REFERENCE 'private final fun drawStoredAnnotation$lambda$27$lambda$26 ($this$apply: androidx.compose.ui.graphics.Paint, $ann: com.medprimetech.annotationapp.domain.model.AnnotationItem): kotlin.Unit declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt' type=@[ExtensionFunctionType] kotlin.Function1<androidx.compose.ui.graphics.Paint, kotlin.Unit> origin=INLINE_LAMBDA reflectionTarget=null
+            ARG $ann: GET_VAR '$ann: com.medprimetech.annotationapp.domain.model.AnnotationItem declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt.drawStoredAnnotation$lambda$27' type=com.medprimetech.annotationapp.domain.model.AnnotationItem origin=null
+    CALL 'public open fun drawText (p0: @[EnhancedNullability] kotlin.String, p1: kotlin.Float, p2: kotlin.Float, p3: @[EnhancedNullability] android.graphics.Paint): kotlin.Unit declared in android.graphics.Canvas' type=kotlin.Unit origin=null
+      ARG <this>: CALL 'public final fun <get-nativeCanvas> (<this>: androidx.compose.ui.graphics.Canvas): android.graphics.Canvas declared in androidx.compose.ui.graphics.AndroidCanvas_androidKt' type=android.graphics.Canvas origin=GET_PROPERTY
+        ARG <this>: GET_VAR 'canvas: androidx.compose.ui.graphics.Canvas declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt.drawStoredAnnotation$lambda$27' type=androidx.compose.ui.graphics.Canvas origin=null
+      ARG p0: CALL 'public final fun <get-text> (): kotlin.String declared in com.medprimetech.annotationapp.domain.model.AnnotationItem.Text' type=kotlin.String origin=GET_PROPERTY
+        ARG <this>: TYPE_OP type=com.medprimetech.annotationapp.domain.model.AnnotationItem.Text origin=IMPLICIT_CAST typeOperand=com.medprimetech.annotationapp.domain.model.AnnotationItem.Text
+          GET_VAR '$ann: com.medprimetech.annotationapp.domain.model.AnnotationItem declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt.drawStoredAnnotation$lambda$27' type=com.medprimetech.annotationapp.domain.model.AnnotationItem origin=null
+      ARG p1: CALL 'public final fun <get-x> (): kotlin.Float declared in com.medprimetech.annotationapp.domain.model.PointFSerializable' type=kotlin.Float origin=GET_PROPERTY
+        ARG <this>: CALL 'public final fun <get-position> (): com.medprimetech.annotationapp.domain.model.PointFSerializable declared in com.medprimetech.annotationapp.domain.model.AnnotationItem.Text' type=com.medprimetech.annotationapp.domain.model.PointFSerializable origin=GET_PROPERTY
+          ARG <this>: TYPE_OP type=com.medprimetech.annotationapp.domain.model.AnnotationItem.Text origin=IMPLICIT_CAST typeOperand=com.medprimetech.annotationapp.domain.model.AnnotationItem.Text
+            GET_VAR '$ann: com.medprimetech.annotationapp.domain.model.AnnotationItem declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt.drawStoredAnnotation$lambda$27' type=com.medprimetech.annotationapp.domain.model.AnnotationItem origin=null
+      ARG p2: CALL 'public final fun <get-y> (): kotlin.Float declared in com.medprimetech.annotationapp.domain.model.PointFSerializable' type=kotlin.Float origin=GET_PROPERTY
+        ARG <this>: CALL 'public final fun <get-position> (): com.medprimetech.annotationapp.domain.model.PointFSerializable declared in com.medprimetech.annotationapp.domain.model.AnnotationItem.Text' type=com.medprimetech.annotationapp.domain.model.PointFSerializable origin=GET_PROPERTY
+          ARG <this>: TYPE_OP type=com.medprimetech.annotationapp.domain.model.AnnotationItem.Text origin=IMPLICIT_CAST typeOperand=com.medprimetech.annotationapp.domain.model.AnnotationItem.Text
+            GET_VAR '$ann: com.medprimetech.annotationapp.domain.model.AnnotationItem declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt.drawStoredAnnotation$lambda$27' type=com.medprimetech.annotationapp.domain.model.AnnotationItem origin=null
+      ARG p3: BLOCK type=android.graphics.Paint origin=null
+        CALL 'public final fun checkNotNull (object: kotlin.Any?, message: kotlin.String): kotlin.Unit declared in kotlin.jvm.internal.Intrinsics' type=kotlin.Unit origin=null
+          ARG object: GET_VAR 'val paint: androidx.compose.ui.graphics.Paint [val] declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt.drawStoredAnnotation$lambda$27' type=androidx.compose.ui.graphics.Paint origin=null
+          ARG message: CONST String type=kotlin.String value="null cannot be cast to non-null type android.graphics.Paint"
+        TYPE_OP type=android.graphics.Paint? origin=CAST typeOperand=android.graphics.Paint?
+          GET_VAR 'val paint: androidx.compose.ui.graphics.Paint [val] declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt.drawStoredAnnotation$lambda$27' type=androidx.compose.ui.graphics.Paint origin=null
+
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:50)
+	at org.jetbrains.kotlin.backend.jvm.codegen.IrSourceCompilerForInline.generateLambdaBody(IrSourceCompilerForInline.kt:72)
+	at org.jetbrains.kotlin.codegen.inline.ExpressionLambda.generateLambdaBody(LambdaInfo.kt:72)
+	at org.jetbrains.kotlin.backend.jvm.codegen.IrInlineCodegen.genValueAndPut(IrInlineCodegen.kt:122)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall$handleParameter(ExpressionCodegen.kt:564)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall(ExpressionCodegen.kt:577)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall(ExpressionCodegen.kt:135)
+	at org.jetbrains.kotlin.ir.expressions.IrCall.accept(IrCall.kt:24)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:527)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitContainerExpression(ExpressionCodegen.kt:541)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitContainerExpression(ExpressionCodegen.kt:135)
+	at org.jetbrains.kotlin.ir.visitors.IrVisitor.visitBlock(IrVisitor.kt:122)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlock(ExpressionCodegen.kt:413)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlock(ExpressionCodegen.kt:135)
+	at org.jetbrains.kotlin.ir.expressions.IrBlock.accept(IrBlock.kt:18)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitWhen(ExpressionCodegen.kt:1049)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitWhen(ExpressionCodegen.kt:135)
+	at org.jetbrains.kotlin.ir.expressions.IrWhen.accept(IrWhen.kt:24)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:527)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitContainerExpression(ExpressionCodegen.kt:541)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitContainerExpression(ExpressionCodegen.kt:135)
+	at org.jetbrains.kotlin.ir.visitors.IrVisitor.visitBlock(IrVisitor.kt:122)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlock(ExpressionCodegen.kt:413)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlock(ExpressionCodegen.kt:135)
+	at org.jetbrains.kotlin.ir.expressions.IrBlock.accept(IrBlock.kt:18)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:527)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:532)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:135)
+	at org.jetbrains.kotlin.ir.expressions.IrBlockBody.accept(IrBlockBody.kt:20)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.generate(ExpressionCodegen.kt:233)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.doGenerate(FunctionCodegen.kt:126)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:47)
+	... 46 more
+Caused by: java.lang.RuntimeException: Exception while generating code for:
+FUN INLINE_LAMBDA name:drawStoredAnnotation$lambda$27$lambda$26 visibility:private modality:FINAL returnType:kotlin.Unit
+  VALUE_PARAMETER kind:ExtensionReceiver name:$this$apply index:0 type:androidx.compose.ui.graphics.Paint
+  VALUE_PARAMETER BOUND_VALUE_PARAMETER kind:Regular name:$ann index:1 type:com.medprimetech.annotationapp.domain.model.AnnotationItem
+  BLOCK_BODY
+    VAR name:$i$a$-apply-DrawingCanvasKt$drawStoredAnnotation$1$paint$1 type:kotlin.Int [val]
+      CONST Int type=kotlin.Int value=0
+    CALL 'public abstract fun setColor-8_81llA (<set-?>: androidx.compose.ui.graphics.Color): kotlin.Unit declared in androidx.compose.ui.graphics.Paint' type=kotlin.Unit origin=EQ
+      ARG <this>: GET_VAR '$this$apply: androidx.compose.ui.graphics.Paint declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt.drawStoredAnnotation$lambda$27$lambda$26' type=androidx.compose.ui.graphics.Paint origin=null
+      ARG <set-?>: CALL 'public open fun constructor-impl (value: kotlin.ULong): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color' type=androidx.compose.ui.graphics.Color origin=null
+        ARG value: CALL 'public final fun toULong (<this>: kotlin.Long): kotlin.ULong [inline] declared in kotlin.ULongKt' type=kotlin.ULong origin=null
+          ARG <this>: CALL 'public final fun <get-color> (): kotlin.Long declared in com.medprimetech.annotationapp.domain.model.AnnotationItem.Text' type=kotlin.Long origin=GET_PROPERTY
+            ARG <this>: TYPE_OP type=com.medprimetech.annotationapp.domain.model.AnnotationItem.Text origin=IMPLICIT_CAST typeOperand=com.medprimetech.annotationapp.domain.model.AnnotationItem.Text
+              GET_VAR '$ann: com.medprimetech.annotationapp.domain.model.AnnotationItem declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt.drawStoredAnnotation$lambda$27$lambda$26' type=com.medprimetech.annotationapp.domain.model.AnnotationItem origin=null
+    SET_FIELD 'FIELD IR_EXTERNAL_JAVA_DECLARATION_STUB name:textSize type:kotlin.Int visibility:public [final,static] declared in android.R.attr' type=kotlin.Unit superQualifierSymbol=android.R.attr origin=EQ
+      value: CALL 'public open fun toInt (): kotlin.Int declared in kotlin.Float' type=kotlin.Int origin=null
+        ARG <this>: CALL 'public final fun <get-fontSize> (): kotlin.Float declared in com.medprimetech.annotationapp.domain.model.AnnotationItem.Text' type=kotlin.Float origin=GET_PROPERTY
+          ARG <this>: TYPE_OP type=com.medprimetech.annotationapp.domain.model.AnnotationItem.Text origin=IMPLICIT_CAST typeOperand=com.medprimetech.annotationapp.domain.model.AnnotationItem.Text
+            GET_VAR '$ann: com.medprimetech.annotationapp.domain.model.AnnotationItem declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt.drawStoredAnnotation$lambda$27$lambda$26' type=com.medprimetech.annotationapp.domain.model.AnnotationItem origin=null
+    CALL 'public abstract fun <set-isAntiAlias> (<set-?>: kotlin.Boolean): kotlin.Unit declared in androidx.compose.ui.graphics.Paint' type=kotlin.Unit origin=EQ
+      ARG <this>: GET_VAR '$this$apply: androidx.compose.ui.graphics.Paint declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt.drawStoredAnnotation$lambda$27$lambda$26' type=androidx.compose.ui.graphics.Paint origin=null
+      ARG <set-?>: CONST Boolean type=kotlin.Boolean value=true
+
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:50)
+	at org.jetbrains.kotlin.backend.jvm.codegen.IrSourceCompilerForInline.generateLambdaBody(IrSourceCompilerForInline.kt:72)
+	at org.jetbrains.kotlin.codegen.inline.ExpressionLambda.generateLambdaBody(LambdaInfo.kt:72)
+	at org.jetbrains.kotlin.backend.jvm.codegen.IrInlineCodegen.genValueAndPut(IrInlineCodegen.kt:122)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall$handleParameter(ExpressionCodegen.kt:564)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall(ExpressionCodegen.kt:577)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall(ExpressionCodegen.kt:135)
+	at org.jetbrains.kotlin.ir.expressions.IrCall.accept(IrCall.kt:24)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitVariable(ExpressionCodegen.kt:725)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitVariable(ExpressionCodegen.kt:135)
+	at org.jetbrains.kotlin.ir.declarations.IrVariable.accept(IrVariable.kt:36)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:527)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:532)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:135)
+	at org.jetbrains.kotlin.ir.expressions.IrBlockBody.accept(IrBlockBody.kt:20)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.generate(ExpressionCodegen.kt:233)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.doGenerate(FunctionCodegen.kt:126)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:47)
+	... 77 more
+Caused by: java.lang.AssertionError: access of const val: SET_FIELD 'FIELD IR_EXTERNAL_JAVA_DECLARATION_STUB name:textSize type:kotlin.Int visibility:public [final,static] declared in android.R.attr' type=kotlin.Unit superQualifierSymbol=android.R.attr origin=EQ
+  value: CALL 'public open fun toInt (): kotlin.Int declared in kotlin.Float' type=kotlin.Int origin=null
+    ARG <this>: CALL 'public final fun <get-fontSize> (): kotlin.Float declared in com.medprimetech.annotationapp.domain.model.AnnotationItem.Text' type=kotlin.Float origin=GET_PROPERTY
+      ARG <this>: TYPE_OP type=com.medprimetech.annotationapp.domain.model.AnnotationItem.Text origin=IMPLICIT_CAST typeOperand=com.medprimetech.annotationapp.domain.model.AnnotationItem.Text
+        GET_VAR '$ann: com.medprimetech.annotationapp.domain.model.AnnotationItem declared in com.medprimetech.annotationapp.presentation.component.DrawingCanvasKt.drawStoredAnnotation$lambda$27$lambda$26' type=com.medprimetech.annotationapp.domain.model.AnnotationItem origin=null
+
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitFieldAccess(ExpressionCodegen.kt:807)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitFieldAccess(ExpressionCodegen.kt:135)
+	at org.jetbrains.kotlin.ir.visitors.IrVisitor.visitSetField(IrVisitor.kt:215)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitSetField(ExpressionCodegen.kt:858)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitSetField(ExpressionCodegen.kt:135)
+	at org.jetbrains.kotlin.ir.expressions.IrSetField.accept(IrSetField.kt:21)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:527)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:532)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:135)
+	at org.jetbrains.kotlin.ir.expressions.IrBlockBody.accept(IrBlockBody.kt:20)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.generate(ExpressionCodegen.kt:233)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.doGenerate(FunctionCodegen.kt:126)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:47)
+	... 94 more
+
+
